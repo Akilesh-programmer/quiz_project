@@ -1,6 +1,7 @@
 # Importing the required things from other files.
 from data import question_data
 from question_model import Question
+from quiz_brain import QuizBrain
 
 # Creating a empty list named question_bank to store the question object.
 question_bank = []
@@ -13,4 +14,8 @@ for thing in question_data:
     question_bank.append(new_question)
 
 
-print(question_bank)
+
+
+quiz = QuizBrain(question_bank)
+while QuizBrain.still_has_questions():
+    quiz.next_question()
