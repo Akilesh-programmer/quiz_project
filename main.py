@@ -15,7 +15,14 @@ for thing in question_data:
 
 
 
-
+# Creating the quiz object.
 quiz = QuizBrain(question_bank)
-while QuizBrain.still_has_questions():
+
+# Creating a while loop to keep on show questions if there are still more questions.
+while quiz.still_has_questions():
+    # Calling the next question method.
     quiz.next_question()
+
+# Printing the final things in the quiz. 
+print("You have completed the quiz.")
+print(f"Your final score is: {quiz.score} / {quiz.question_number}.")
